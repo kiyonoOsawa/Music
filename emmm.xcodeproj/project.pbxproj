@@ -93,6 +93,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE19FBF02C19297D0004A964 /* VariousOtherThings */ = {
+			isa = PBXGroup;
+			children = (
+				CEC48F942C191F0C002DA3F6 /* MusicKitViewModel.swift */,
+				CEC48F962C191F27002DA3F6 /* Diary.swift */,
+			);
+			path = VariousOtherThings;
+			sourceTree = "<group>";
+		};
+		CE19FBF12C19299B0004A964 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				CEC48F982C191F38002DA3F6 /* TabBar.swift */,
+				CEC48F9A2C191F4D002DA3F6 /* TabBarViewController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		CE19FBF22C1929A50004A964 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				CEC48F9C2C191F5F002DA3F6 /* MusicViewController.swift */,
+				CEC48F9E2C191F86002DA3F6 /* MusicListTableViewCell.swift */,
+				CEC48F9F2C191F86002DA3F6 /* MusicListTableViewCell.xib */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		CE19FBF32C1929B50004A964 /* AddDiary */ = {
+			isa = PBXGroup;
+			children = (
+				CEC48FA22C192009002DA3F6 /* AddDiaryViewController.swift */,
+				CEC48FA42C192027002DA3F6 /* DateTableViewCell.swift */,
+				CEC48FA52C192027002DA3F6 /* DateTableViewCell.xib */,
+				CEC48FA82C19206E002DA3F6 /* MusicTableViewCell.swift */,
+				CEC48FA92C19206E002DA3F6 /* MusicTableViewCell.xib */,
+				CEC48FAC2C192091002DA3F6 /* EmotionTableViewCell.swift */,
+				CEC48FAD2C192091002DA3F6 /* EmotionTableViewCell.xib */,
+				CEC48FB02C1920B3002DA3F6 /* TextTableViewCell.swift */,
+				CEC48FB12C1920B3002DA3F6 /* TextTableViewCell.xib */,
+			);
+			path = AddDiary;
+			sourceTree = "<group>";
+		};
+		CE19FBF42C1929C70004A964 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CEC48FB42C1920D6002DA3F6 /* HomeViewController.swift */,
+				CEC48FB62C1920E7002DA3F6 /* DetailViewController.swift */,
+				CEC48FB82C1920FE002DA3F6 /* DiaryCollectionViewCell.swift */,
+				CEC48FB92C1920FE002DA3F6 /* DiaryCollectionViewCell.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CE19FBF52C1929D80004A964 /* Playlist */ = {
+			isa = PBXGroup;
+			children = (
+				CEC48FBE2C19214C002DA3F6 /* PlaylistViewController.swift */,
+				CEC48FC62C192195002DA3F6 /* PlayListCollectionViewCell.swift */,
+				CEC48FC72C192195002DA3F6 /* PlayListCollectionViewCell.xib */,
+			);
+			path = Playlist;
+			sourceTree = "<group>";
+		};
+		CE19FBF62C1929E50004A964 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CEC48FCC2C1921B9002DA3F6 /* Main.storyboard */,
+				CEC48FCB2C1921B9002DA3F6 /* Home.storyboard */,
+				CEC48FCA2C1921B9002DA3F6 /* AddDiary.storyboard */,
+				CEC48FCD2C1921B9002DA3F6 /* Playlist.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		CEC48F6F2C191C0F002DA3F6 = {
 			isa = PBXGroup;
 			children = (
@@ -115,33 +191,13 @@
 				CEC48F7B2C191C0F002DA3F6 /* AppDelegate.swift */,
 				CEC48F7D2C191C0F002DA3F6 /* SceneDelegate.swift */,
 				CEC48F7F2C191C0F002DA3F6 /* ViewController.swift */,
-				CEC48F942C191F0C002DA3F6 /* MusicKitViewModel.swift */,
-				CEC48F962C191F27002DA3F6 /* Diary.swift */,
-				CEC48F982C191F38002DA3F6 /* TabBar.swift */,
-				CEC48F9A2C191F4D002DA3F6 /* TabBarViewController.swift */,
-				CEC48F9C2C191F5F002DA3F6 /* MusicViewController.swift */,
-				CEC48F9E2C191F86002DA3F6 /* MusicListTableViewCell.swift */,
-				CEC48F9F2C191F86002DA3F6 /* MusicListTableViewCell.xib */,
-				CEC48FA22C192009002DA3F6 /* AddDiaryViewController.swift */,
-				CEC48FA42C192027002DA3F6 /* DateTableViewCell.swift */,
-				CEC48FA52C192027002DA3F6 /* DateTableViewCell.xib */,
-				CEC48FA82C19206E002DA3F6 /* MusicTableViewCell.swift */,
-				CEC48FA92C19206E002DA3F6 /* MusicTableViewCell.xib */,
-				CEC48FAC2C192091002DA3F6 /* EmotionTableViewCell.swift */,
-				CEC48FAD2C192091002DA3F6 /* EmotionTableViewCell.xib */,
-				CEC48FB02C1920B3002DA3F6 /* TextTableViewCell.swift */,
-				CEC48FB12C1920B3002DA3F6 /* TextTableViewCell.xib */,
-				CEC48FB42C1920D6002DA3F6 /* HomeViewController.swift */,
-				CEC48FB62C1920E7002DA3F6 /* DetailViewController.swift */,
-				CEC48FB82C1920FE002DA3F6 /* DiaryCollectionViewCell.swift */,
-				CEC48FB92C1920FE002DA3F6 /* DiaryCollectionViewCell.xib */,
-				CEC48FBE2C19214C002DA3F6 /* PlaylistViewController.swift */,
-				CEC48FC62C192195002DA3F6 /* PlayListCollectionViewCell.swift */,
-				CEC48FC72C192195002DA3F6 /* PlayListCollectionViewCell.xib */,
-				CEC48FCB2C1921B9002DA3F6 /* Home.storyboard */,
-				CEC48FCC2C1921B9002DA3F6 /* Main.storyboard */,
-				CEC48FCA2C1921B9002DA3F6 /* AddDiary.storyboard */,
-				CEC48FCD2C1921B9002DA3F6 /* Playlist.storyboard */,
+				CE19FBF02C19297D0004A964 /* VariousOtherThings */,
+				CE19FBF12C19299B0004A964 /* Tabbar */,
+				CE19FBF22C1929A50004A964 /* Music */,
+				CE19FBF32C1929B50004A964 /* AddDiary */,
+				CE19FBF42C1929C70004A964 /* Home */,
+				CE19FBF52C1929D80004A964 /* Playlist */,
+				CE19FBF62C1929E50004A964 /* Storyboard */,
 				CEC48F842C191C11002DA3F6 /* Assets.xcassets */,
 				CEC48F862C191C11002DA3F6 /* LaunchScreen.storyboard */,
 				CEC48F892C191C11002DA3F6 /* Info.plist */,
