@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="dateCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="dateCell" id="UIk-OE-iTt" customClass="DateTableViewCell" customModule="Music" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UIk-OE-iTt" id="7Hh-dM-Mo9">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="VE7-PO-hOF">
+                        <rect key="frame" x="91.666666666666686" y="11" width="137" height="34.333333333333336"/>
+                        <color key="tintColor" name="blackColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="137" id="SAd-Ai-mG6"/>
+                        </constraints>
+                    </datePicker>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3a-HI-iHb">
+                        <rect key="frame" x="16" y="17.666666666666668" width="48" height="21.000000000000004"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" name="blackColor"/>
+                        <color key="highlightedColor" name="blackColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="VE7-PO-hOF" firstAttribute="centerY" secondItem="7Hh-dM-Mo9" secondAttribute="centerY" id="HBa-t9-Xdc"/>
+                    <constraint firstItem="K3a-HI-iHb" firstAttribute="leading" secondItem="7Hh-dM-Mo9" secondAttribute="leading" constant="16" id="Npf-LN-31y"/>
+                    <constraint firstItem="K3a-HI-iHb" firstAttribute="centerY" secondItem="7Hh-dM-Mo9" secondAttribute="centerY" id="Vb6-PO-ZMX"/>
+                    <constraint firstItem="VE7-PO-hOF" firstAttribute="centerX" secondItem="7Hh-dM-Mo9" secondAttribute="centerX" id="khB-we-da8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="WuQ-lT-J3g"/>
+            <connections>
+                <outlet property="datePicker" destination="VE7-PO-hOF" id="Vrc-ZL-CHS"/>
+            </connections>
+            <point key="canvasLocation" x="158.77862595419847" y="6.3380281690140849"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="blackColor">
+            <color red="0.10980392156862745" green="0.12941176470588237" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

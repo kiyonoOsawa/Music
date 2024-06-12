@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="emotionCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="emotionCell" rowHeight="293" id="QPK-ac-Nug" customClass="EmotionTableViewCell" customModule="Music" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="406" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QPK-ac-Nug" id="siV-By-DA4">
+                <rect key="frame" x="0.0" y="0.0" width="406" height="272"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oZ8-1K-CoC">
+                        <rect key="frame" x="37" y="16" width="332" height="94.666666666666671"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hTh-ex-URO">
+                                <rect key="frame" x="0.0" y="0.0" width="68" height="94.666666666666671"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCN-ga-ZJW">
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="68"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="68" id="U8x-Td-oPH"/>
+                                            <constraint firstAttribute="height" constant="68" id="rbg-Vw-LKe"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button" image="happy"/>
+                                        <connections>
+                                            <action selector="tappedBtn:" destination="QPK-ac-Nug" eventType="touchUpInside" id="E0B-K6-xA8"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXk-OH-zRu">
+                                        <rect key="frame" x="0.0" y="76" width="68" height="18.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18.670000000000002" id="KuZ-GD-FMe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
+                                        <color key="textColor" name="blackColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lXk-OH-zRu" firstAttribute="centerX" secondItem="vCN-ga-ZJW" secondAttribute="centerX" id="bkY-xD-RJJ"/>
+                                    <constraint firstItem="lXk-OH-zRu" firstAttribute="top" secondItem="vCN-ga-ZJW" secondAttribute="bottom" constant="8" symbolic="YES" id="kJj-Wo-20M"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gZM-op-5EP">
+                                <rect key="frame" x="88" y="0.0" width="68" height="94.666666666666671"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ff6-jE-Bvl">
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="68"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="68" id="7nh-JJ-vFj"/>
+                                            <constraint firstAttribute="height" constant="68" id="YYf-TJ-vFf"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="regret"/>
+                                        <connections>
+                                            <action selector="tappedBtn:" destination="QPK-ac-Nug" eventType="touchUpInside" id="t99-tZ-ao5"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regret" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KK-zV-QG0">
+                                        <rect key="frame" x="0.0" y="76" width="68" height="18.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18.670000000000002" id="8km-Yw-UqY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
+                                        <color key="textColor" name="blackColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="4KK-zV-QG0" firstAttribute="top" secondItem="ff6-jE-Bvl" secondAttribute="bottom" constant="8" symbolic="YES" id="3kU-st-hvU"/>
+                                    <constraint firstItem="4KK-zV-QG0" firstAttribute="centerX" secondItem="ff6-jE-Bvl" secondAttribute="centerX" id="eRI-JX-1Kv"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Cc-O7-nzv">
+                                <rect key="frame" x="176" y="0.0" width="68" height="94.666666666666671"/>
+                                <subviews>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpw-s1-Qln">
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="68"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="68" id="Dhn-mX-ijA"/>
+                                            <constraint firstAttribute="width" constant="68" id="Nmm-Xe-dbe"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" backgroundImage="anxiety"/>
+                                        <connections>
+                                            <action selector="tappedBtn:" destination="QPK-ac-Nug" eventType="touchUpInside" id="VFE-eu-OxQ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anxiety" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLm-z3-090">
+                                        <rect key="frame" x="0.0" y="76" width="68" height="18.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18.670000000000002" id="Ba9-Wz-HAf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
+                                        <color key="textColor" name="blackColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pLm-z3-090" firstAttribute="centerX" secondItem="Fpw-s1-Qln" secondAttribute="centerX" id="FMs-Le-aII"/>
+                                    <constraint firstItem="pLm-z3-090" firstAttribute="top" secondItem="Fpw-s1-Qln" secondAttribute="bottom" constant="8" symbolic="YES" id="nei-Wl-1V9"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="iZj-fm-LdL">
+                                <rect key="frame" x="264" y="-0.3333333333333357" width="68" height="95.666666666666686"/>
+                                <subviews>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mna-Gx-4x9">
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="68.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="68.670000000000002" id="4XF-jl-myq"/>
+                                            <constraint firstAttribute="width" constant="68" id="fhZ-7B-Adk"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" backgroundImage="angry"/>
+                                        <connections>
+                                            <action selector="tappedBtn:" destination="QPK-ac-Nug" eventType="touchUpInside" id="pSC-i1-cAd"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHx-Rq-TTE">
+                                        <rect key="frame" x="0.0" y="76.666666666666657" width="68" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="1IQ-Ri-kn5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
+                                        <color key="textColor" name="blackColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="sHx-Rq-TTE" firstAttribute="centerX" secondItem="mna-Gx-4x9" secondAttribute="centerX" id="0d8-rW-zgX"/>
+                                    <constraint firstItem="sHx-Rq-TTE" firstAttribute="top" secondItem="mna-Gx-4x9" secondAttribute="bottom" constant="8" symbolic="YES" id="jhJ-ps-96U"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="iZj-fm-LdL" firstAttribute="centerY" secondItem="hTh-ex-URO" secondAttribute="centerY" id="0aI-dI-3a8"/>
+                            <constraint firstItem="2Cc-O7-nzv" firstAttribute="centerY" secondItem="hTh-ex-URO" secondAttribute="centerY" id="iCE-ks-CyR"/>
+                            <constraint firstItem="gZM-op-5EP" firstAttribute="centerY" secondItem="hTh-ex-URO" secondAttribute="centerY" id="jQ0-LP-CCK"/>
+                        </constraints>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qSW-nq-ptm">
+                        <rect key="frame" x="37" y="158" width="332" height="94"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7DZ-dc-mZn">
+                                <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="94"/>
+                                <subviews>
+                                    <button opaque="NO" tag="4" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUm-pl-NJz">
+                                        <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="67.333333333333329"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="67.329999999999998" id="a98-dw-Kxb"/>
+                                            <constraint firstAttribute="width" constant="67.329999999999998" id="tGK-EA-SOf"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button" image="sad"/>
+                                        <connections>
+                                            <action selector="tappedBtn:" destination="QPK-ac-Nug" eventType="touchUpInside" id="bNH-EH-fX8"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lm8-93-aCU">
+                                        <rect key="frame" x="0.0" y="75.333333333333343" width="67.333333333333329" height="18.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18.670000000000002" id="6Gl-el-peR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
+                                        <color key="textColor" name="blackColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Lm8-93-aCU" firstAttribute="top" secondItem="NUm-pl-NJz" secondAttribute="bottom" constant="8" symbolic="YES" id="Ex0-dU-HxK"/>
+                                    <constraint firstItem="Lm8-93-aCU" firstAttribute="centerX" secondItem="NUm-pl-NJz" secondAttribute="centerX" id="PX3-SC-I1G"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="jK2-mi-0tb">
+                                <rect key="frame" x="87.333333333333343" y="-1" width="68.333333333333343" height="95"/>
+                                <subviews>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmz-VQ-af8">
+                                        <rect key="frame" x="0.0" y="0.0" width="68.333333333333329" height="68.333333333333329"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="68.329999999999998" id="Axl-pf-JfL"/>
+                                            <constraint firstAttribute="height" constant="68.329999999999998" id="bLa-5E-YXX"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="love"/>
+                                        <connections>
+                                            <action selector="tappedBtn:" destination="QPK-ac-Nug" eventType="touchUpInside" id="m4S-qf-3c9"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Love" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qle-yu-QNB">
+                                        <rect key="frame" x="0.0" y="76.333333333333343" width="68.333333333333329" height="18.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18.670000000000002" id="fsm-jM-jyn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
+                                        <color key="textColor" name="blackColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Qle-yu-QNB" firstAttribute="top" secondItem="qmz-VQ-af8" secondAttribute="bottom" constant="8" symbolic="YES" id="NIq-yO-gY8"/>
+                                    <constraint firstItem="Qle-yu-QNB" firstAttribute="centerX" secondItem="qmz-VQ-af8" secondAttribute="centerX" id="WQ0-ZO-m5U"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="elG-cr-QZn">
+                                <rect key="frame" x="175.66666666666666" y="-1" width="68" height="95"/>
+                                <subviews>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOE-Jn-lCk">
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="68"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="68" id="JiY-yn-WXY"/>
+                                            <constraint firstAttribute="width" constant="68" id="ZEg-8D-TlZ"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="joy"/>
+                                        <connections>
+                                            <action selector="tappedBtn:" destination="QPK-ac-Nug" eventType="touchUpInside" id="oWQ-7P-jD7"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nH-xh-xAv">
+                                        <rect key="frame" x="0.0" y="76" width="68" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="edF-TZ-ue3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
+                                        <color key="textColor" name="blackColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="4nH-xh-xAv" firstAttribute="top" secondItem="kOE-Jn-lCk" secondAttribute="bottom" constant="8" symbolic="YES" id="cBs-MS-Aw2"/>
+                                    <constraint firstItem="4nH-xh-xAv" firstAttribute="centerX" secondItem="kOE-Jn-lCk" secondAttribute="centerX" id="quM-FA-FrY"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="2Kw-yn-T0X">
+                                <rect key="frame" x="263.66666666666669" y="-363.66666666666663" width="68.333333333333314" height="457.66666666666669"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjd-MU-JfJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="68.333333333333329" height="431"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="68.329999999999998" id="Dbd-ef-0Z1"/>
+                                            <constraint firstAttribute="height" constant="68.329999999999998" id="wvE-bP-yc4"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" backgroundImage="tired"/>
+                                        <connections>
+                                            <action selector="tappedBtn:" destination="QPK-ac-Nug" eventType="touchUpInside" id="OQ5-K7-Vde"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tired" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrN-Ml-TEl">
+                                        <rect key="frame" x="0.0" y="439" width="68.333333333333329" height="18.666666666666686"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18.670000000000002" id="CbD-ZB-gLc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
+                                        <color key="textColor" name="blackColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SrN-Ml-TEl" firstAttribute="top" secondItem="Vjd-MU-JfJ" secondAttribute="bottom" constant="8" symbolic="YES" id="siX-nw-seX"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oZ8-1K-CoC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="siV-By-DA4" secondAttribute="leading" constant="16" id="5S6-qs-ofd"/>
+                    <constraint firstItem="oZ8-1K-CoC" firstAttribute="centerX" secondItem="siV-By-DA4" secondAttribute="centerX" id="7pO-nY-ATv"/>
+                    <constraint firstItem="qSW-nq-ptm" firstAttribute="centerX" secondItem="siV-By-DA4" secondAttribute="centerX" id="A7S-At-IbO"/>
+                    <constraint firstItem="qSW-nq-ptm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="siV-By-DA4" secondAttribute="leading" constant="16" id="B8U-di-LNE"/>
+                    <constraint firstAttribute="bottom" secondItem="qSW-nq-ptm" secondAttribute="bottom" constant="20" symbolic="YES" id="M9R-U3-xpc"/>
+                    <constraint firstItem="qSW-nq-ptm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oZ8-1K-CoC" secondAttribute="bottom" constant="16" id="Spx-XB-Hth"/>
+                    <constraint firstItem="oZ8-1K-CoC" firstAttribute="top" secondItem="siV-By-DA4" secondAttribute="top" constant="16" id="SvI-VE-DbA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="Xij-Wf-GoS"/>
+            <connections>
+                <outletCollection property="emotionLabels" destination="lXk-OH-zRu" collectionClass="NSMutableArray" id="hKg-Nc-c00"/>
+                <outletCollection property="emotionButtons" destination="vCN-ga-ZJW" collectionClass="NSMutableArray" id="9bv-Ux-MJf"/>
+                <outletCollection property="emotionLabels" destination="4KK-zV-QG0" collectionClass="NSMutableArray" id="kaC-G5-vy4"/>
+                <outletCollection property="emotionButtons" destination="ff6-jE-Bvl" collectionClass="NSMutableArray" id="blC-mB-qyk"/>
+                <outletCollection property="emotionLabels" destination="pLm-z3-090" collectionClass="NSMutableArray" id="Q9E-om-8NF"/>
+                <outletCollection property="emotionButtons" destination="Fpw-s1-Qln" collectionClass="NSMutableArray" id="xie-17-7v7"/>
+                <outletCollection property="emotionLabels" destination="sHx-Rq-TTE" collectionClass="NSMutableArray" id="6qg-7O-m3Q"/>
+                <outletCollection property="emotionButtons" destination="mna-Gx-4x9" collectionClass="NSMutableArray" id="otW-vd-eKs"/>
+                <outletCollection property="emotionButtons" destination="NUm-pl-NJz" collectionClass="NSMutableArray" id="5eT-Pr-0aJ"/>
+                <outletCollection property="emotionLabels" destination="Lm8-93-aCU" collectionClass="NSMutableArray" id="CN4-7u-6ga"/>
+                <outletCollection property="emotionButtons" destination="qmz-VQ-af8" collectionClass="NSMutableArray" id="ihZ-Hk-1IB"/>
+                <outletCollection property="emotionLabels" destination="Qle-yu-QNB" collectionClass="NSMutableArray" id="eTo-zL-dza"/>
+                <outletCollection property="emotionButtons" destination="kOE-Jn-lCk" collectionClass="NSMutableArray" id="4WU-Ed-DlC"/>
+                <outletCollection property="emotionLabels" destination="4nH-xh-xAv" collectionClass="NSMutableArray" id="SBB-t2-Kss"/>
+                <outletCollection property="emotionButtons" destination="Vjd-MU-JfJ" collectionClass="NSMutableArray" id="MVL-4r-YS0"/>
+                <outletCollection property="emotionLabels" destination="SrN-Ml-TEl" collectionClass="NSMutableArray" id="rwV-X6-ROI"/>
+            </connections>
+            <point key="canvasLocation" x="-232" y="-63"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="angry" width="467" height="438"/>
+        <image name="anxiety" width="483" height="417"/>
+        <image name="happy" width="479" height="401"/>
+        <image name="joy" width="553" height="403"/>
+        <image name="love" width="525" height="411"/>
+        <image name="regret" width="463" height="398"/>
+        <image name="sad" width="555" height="420"/>
+        <image name="tired" width="481" height="431"/>
+        <namedColor name="blackColor">
+            <color red="0.10980392156862745" green="0.12941176470588237" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
