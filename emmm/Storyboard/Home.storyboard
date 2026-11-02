@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LXm-sp-FVD">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,37 +12,15 @@
         <!--Music-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="HomeViewController" customModule="Music" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="HomeViewController" customModule="emmm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rRR-JM-oM0">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
-                                <color key="backgroundColor" name="lightColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="16" minimumInteritemSpacing="24" id="epP-JY-AaM">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="lightColor"/>
-                        <constraints>
-                            <constraint firstItem="rRR-JM-oM0" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="5Ue-3g-bv5"/>
-                            <constraint firstItem="rRR-JM-oM0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="LKu-QO-Zm8"/>
-                            <constraint firstItem="rRR-JM-oM0" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="MGJ-qA-Nlp"/>
-                            <constraint firstItem="rRR-JM-oM0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="SGV-mQ-32v"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Music" id="Dpr-xu-AH7"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="diaryCollectionView" destination="rRR-JM-oM0" id="DFY-De-BpB"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,7 +29,7 @@
         <!--Detail View Controller-->
         <scene sceneID="gWG-Uu-mRe">
             <objects>
-                <viewController storyboardIdentifier="ditailVC" id="00C-T3-xoN" customClass="DetailViewController" customModule="Music" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ditailVC" id="00C-T3-xoN" customClass="DetailViewController" customModule="emmm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XDe-FE-dOe">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
