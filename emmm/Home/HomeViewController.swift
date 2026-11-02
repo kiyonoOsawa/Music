@@ -1,4 +1,3 @@
-import MusicKit
 import SwiftUI
 import UIKit
 
@@ -25,17 +24,9 @@ class HomeViewController: UIViewController {
     }
 
     private func openDetail(_ item: DiaryCardItem) {
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        guard let nextVC = storyboard.instantiateViewController(withIdentifier: "ditailVC") as? DetailViewController else {
-            return
-        }
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd"
-        nextVC.date = dateFormatter.string(from: item.date)
-        nextVC.musicID = MusicItemID(rawValue: item.musicIDString)
-        nextVC.emotionNum = item.emotion
-        nextVC.content = item.content
-        nextVC.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(nextVC, animated: true)
+        let host = UIHostingController(rootView: DetailView(model: DetailModel(item: item)))
+        host.hidesBottomBarWhenPushed = true
+        navigationController?.navigationBar.tintColor = UIColor(named: "mainColor")
+        navigationController?.pushViewController(host, animated: true)
     }
 }

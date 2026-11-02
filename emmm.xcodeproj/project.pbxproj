@@ -35,7 +35,8 @@
 		CEC48FB22C1920B3002DA3F6 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC48FB02C1920B3002DA3F6 /* TextTableViewCell.swift */; };
 		CEC48FB32C1920B3002DA3F6 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC48FB12C1920B3002DA3F6 /* TextTableViewCell.xib */; };
 		CEC48FB52C1920D6002DA3F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC48FB42C1920D6002DA3F6 /* HomeViewController.swift */; };
-		CEC48FB72C1920E7002DA3F6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC48FB62C1920E7002DA3F6 /* DetailViewController.swift */; };
+		CE19FC0A2C192A120004A964 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC092C192A120004A964 /* DetailModel.swift */; };
+		CE19FC0C2C192A120004A964 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC0B2C192A120004A964 /* DetailView.swift */; };
 		CEC48FBA2C1920FE002DA3F6 /* DiaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC48FB82C1920FE002DA3F6 /* DiaryCollectionViewCell.swift */; };
 		CEC48FBB2C1920FE002DA3F6 /* DiaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC48FB92C1920FE002DA3F6 /* DiaryCollectionViewCell.xib */; };
 		CEC48FBF2C19214C002DA3F6 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC48FBE2C19214C002DA3F6 /* PlaylistViewController.swift */; };
@@ -76,7 +77,8 @@
 		CEC48FB02C1920B3002DA3F6 /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
 		CEC48FB12C1920B3002DA3F6 /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
 		CEC48FB42C1920D6002DA3F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		CEC48FB62C1920E7002DA3F6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CE19FC092C192A120004A964 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		CE19FC0B2C192A120004A964 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		CEC48FB82C1920FE002DA3F6 /* DiaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEC48FB92C1920FE002DA3F6 /* DiaryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryCollectionViewCell.xib; sourceTree = "<group>"; };
 		CEC48FBE2C19214C002DA3F6 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +155,8 @@
 				CE19FC032C192A110004A964 /* DiaryCardItem.swift */,
 				CE19FC052C192A110004A964 /* HomeModel.swift */,
 				CE19FC072C192A110004A964 /* DiaryCard.swift */,
-				CEC48FB62C1920E7002DA3F6 /* DetailViewController.swift */,
+				CE19FC092C192A120004A964 /* DetailModel.swift */,
+				CE19FC0B2C192A120004A964 /* DetailView.swift */,
 				CEC48FB82C1920FE002DA3F6 /* DiaryCollectionViewCell.swift */,
 				CEC48FB92C1920FE002DA3F6 /* DiaryCollectionViewCell.xib */,
 			);
@@ -318,7 +321,8 @@
 				CE19FC062C192A110004A964 /* HomeModel.swift in Sources */,
 				CE19FC082C192A110004A964 /* DiaryCard.swift in Sources */,
 				CEC48FA02C191F86002DA3F6 /* MusicListTableViewCell.swift in Sources */,
-				CEC48FB72C1920E7002DA3F6 /* DetailViewController.swift in Sources */,
+				CE19FC0A2C192A120004A964 /* DetailModel.swift in Sources */,
+				CE19FC0C2C192A120004A964 /* DetailView.swift in Sources */,
 				CEC48F9D2C191F5F002DA3F6 /* MusicViewController.swift in Sources */,
 				CEC48F9B2C191F4D002DA3F6 /* TabBarViewController.swift in Sources */,
 				CEC48FB22C1920B3002DA3F6 /* TextTableViewCell.swift in Sources */,
