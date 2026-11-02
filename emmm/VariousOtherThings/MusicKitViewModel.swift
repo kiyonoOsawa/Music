@@ -27,6 +27,19 @@ class MusicKitViewModel: NSObject {
         print("何型？\(type(of: ids))")
         return (titles, images, artists, ids)
     }
+
+    func fetchRecentSongs() async throws -> [RecentSong] {
+        musicRequest.limit = 30
+        response = try await musicRequest.response()
+        return response.items.map { song in
+            RecentSong(
+                id: song.id.rawValue,
+                title: song.title,
+                artistName: song.artistName,
+                artworkURL: song.artwork?.url(width: 200, height: 200)
+            )
+        }
+    }
     
     func fetchMusicID() async {
         do {
