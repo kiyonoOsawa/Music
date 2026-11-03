@@ -102,6 +102,18 @@ class MusicKitViewModel: NSObject {
         print("わんわん🐶",requestPlaylists, responsePlaylists.debugDescription)
         return (playlistTitles, playlistIDs, playlistImages)
     }
+
+    func fetchEmotionPlaylists() async throws -> [EmotionPlaylist] {
+        let response = try await MusicLibraryRequest<Playlist>().response()
+        let transientPrefix = "musicKit://artwork/transient"
+        return response.items.compactMap { playlist in
+            guard DiaryCardItem.emotionNames.contains(playlist.name.lowercased()) else { return nil }
+            let artworkURL = playlist.artwork?.url(width: 200, height: 200)
+            if artworkURL?.absoluteString.hasPrefix(transientPrefix) == true { return nil }
+            guard let url = playlist.url else { return nil }
+            return EmotionPlaylist(id: url.absoluteString, title: playlist.name, artworkURL: artworkURL, url: url)
+        }
+    }
     
     static func createMusicPlaylist(name: String) async throws {
         Task {

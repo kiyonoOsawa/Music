@@ -20,20 +20,6 @@
             </objects>
             <point key="canvasLocation" x="723" y="-104"/>
         </scene>
-        <!--Playlist-->
-        <scene sceneID="iX7-ot-lbc">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Playlist" id="L7Z-Xx-Mze" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="lnV-dP-EVv">
-                        <imageReference key="image" image="play.square.stack" catalog="system"/>
-                        <color key="badgeColor" name="accentColor"/>
-                        <imageReference key="selectedImage" image="play.square.stack" catalog="system" symbolScale="default"/>
-                    </tabBarItem>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E6w-3B-scD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="723" y="80"/>
-        </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="FUE-fe-xPs">
             <objects>
@@ -48,7 +34,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="EYT-oY-FQB" kind="relationship" relationship="viewControllers" id="RpY-Ga-Ixu"/>
-                        <segue destination="L7Z-Xx-Mze" kind="relationship" relationship="viewControllers" id="Qt1-Nr-NVa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27D-ZK-qLJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -63,7 +48,6 @@
     </designables>
     <resources>
         <image name="house" catalog="system" width="128" height="104"/>
-        <image name="play.square.stack" catalog="system" width="105" height="128"/>
         <namedColor name="accentColor">
             <color red="0.22745098039215686" green="0.5725490196078431" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
