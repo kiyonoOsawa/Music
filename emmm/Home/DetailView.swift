@@ -71,6 +71,9 @@ struct DetailView: View {
             .padding(.bottom, 8)
         }
         .background(Color(uiColor: .secondarySystemGroupedBackground))
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar(.hidden, for: .tabBar)
+        .tint(Color("mainColor"))
         .task {
             await model.load()
         }

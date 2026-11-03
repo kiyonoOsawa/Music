@@ -1,9 +1,16 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var model: HomeModel
-    var onSelect: (DiaryCardItem) -> Void
+    @StateObject private var model: HomeModel
     @State private var isShowingAddDiary = false
+
+    init() {
+        _model = StateObject(wrappedValue: HomeModel())
+    }
+
+    init(previewDiaries: [DiaryCardItem]) {
+        _model = StateObject(wrappedValue: HomeModel(previewDiaries: previewDiaries))
+    }
 
     var body: some View {
         ScrollView {
@@ -16,8 +23,8 @@ struct HomeView: View {
             } else {
                 LazyVStack(spacing: 16) {
                     ForEach(model.diaries) { diary in
-                        Button {
-                            onSelect(diary)
+                        NavigationLink {
+                            DetailView(model: DetailModel(item: diary))
                         } label: {
                             DiaryCard(diary: diary)
                         }
@@ -33,6 +40,8 @@ struct HomeView: View {
             }
         }
         .background(Color("lightColor"))
+        .navigationTitle("Music")
+        .navigationBarTitleDisplayMode(.inline)
         .safeAreaInset(edge: .bottom, spacing: 0) {
             AddDiaryButton {
                 isShowingAddDiary = true
@@ -73,16 +82,11 @@ private struct AddDiaryButton: View {
 }
 
 private struct HomePreview: View {
-    @StateObject private var model: HomeModel
-
-    init(diaries: [DiaryCardItem]) {
-        _model = StateObject(wrappedValue: HomeModel(previewDiaries: diaries))
-    }
+    var diaries: [DiaryCardItem]
 
     var body: some View {
         NavigationStack {
-            HomeView(model: model, onSelect: { _ in })
-                .navigationTitle("Music")
+            HomeView(previewDiaries: diaries)
         }
     }
 }
