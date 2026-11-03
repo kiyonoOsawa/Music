@@ -1,20 +1,29 @@
+import SwiftData
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject private var model: HomeModel
+    @Environment(\.modelContext) private var modelContext
+    @Query(sort: \Diary.listOrder) private var storedDiaries: [Diary]
+    @State private var previewDiaries: [DiaryCardItem]?
     @State private var isShowingAddDiary = false
 
     init() {
-        _model = StateObject(wrappedValue: HomeModel())
+        _previewDiaries = State(initialValue: nil)
+        _storedDiaries = Query(sort: \Diary.listOrder)
     }
 
     init(previewDiaries: [DiaryCardItem]) {
-        _model = StateObject(wrappedValue: HomeModel(previewDiaries: previewDiaries))
+        _previewDiaries = State(initialValue: previewDiaries)
+        _storedDiaries = Query(sort: \Diary.listOrder)
+    }
+
+    private var diaries: [DiaryCardItem] {
+        previewDiaries ?? storedDiaries.map(\.cardItem)
     }
 
     var body: some View {
         ScrollView {
-            if model.diaries.isEmpty {
+            if diaries.isEmpty {
                 Text("日記はまだありません")
                     .font(.body)
                     .foregroundStyle(Color("blackColor"))
@@ -22,7 +31,7 @@ struct HomeView: View {
                     .padding(.top, 48)
             } else {
                 LazyVStack(spacing: 16) {
-                    ForEach(model.diaries) { diary in
+                    ForEach(diaries) { diary in
                         NavigationLink {
                             DetailView(model: DetailModel(item: diary))
                         } label: {
@@ -31,7 +40,7 @@ struct HomeView: View {
                         .buttonStyle(.plain)
                         .contextMenu {
                             Button("Delete", role: .destructive) {
-                                model.delete(id: diary.id)
+                                delete(id: diary.id)
                             }
                         }
                     }
@@ -53,6 +62,15 @@ struct HomeView: View {
         .sheet(isPresented: $isShowingAddDiary) {
             AddDiaryView()
         }
+    }
+
+    private func delete(id: String) {
+        if previewDiaries != nil {
+            previewDiaries?.removeAll { $0.id == id }
+            return
+        }
+        guard let diary = storedDiaries.first(where: { $0.id == id }) else { return }
+        modelContext.delete(diary)
     }
 }
 
@@ -88,5 +106,6 @@ private struct HomePreview: View {
         NavigationStack {
             HomeView(previewDiaries: diaries)
         }
+        .modelContainer(for: Diary.self, inMemory: true)
     }
 }

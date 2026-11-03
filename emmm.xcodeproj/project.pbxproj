@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE19FC022C192A100004A964 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC012C192A100004A964 /* HomeView.swift */; };
 		CE19FC042C192A110004A964 /* DiaryCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC032C192A110004A964 /* DiaryCardItem.swift */; };
-		CE19FC062C192A110004A964 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC052C192A110004A964 /* HomeModel.swift */; };
+		CE19FC062C192A110004A964 /* DiaryStoreImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC052C192A110004A964 /* DiaryStoreImporter.swift */; };
 		CE19FC082C192A110004A964 /* DiaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC072C192A110004A964 /* DiaryCard.swift */; };
 		CEC48F7C2C191C0F002DA3F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC48F7B2C191C0F002DA3F6 /* AppDelegate.swift */; };
 		CE19FC1E2C192A150004A964 /* EmmmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC1D2C192A150004A964 /* EmmmApp.swift */; };
@@ -35,7 +35,7 @@
 /* Begin PBXFileReference section */
 		CE19FC012C192A100004A964 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CE19FC032C192A110004A964 /* DiaryCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCardItem.swift; sourceTree = "<group>"; };
-		CE19FC052C192A110004A964 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		CE19FC052C192A110004A964 /* DiaryStoreImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryStoreImporter.swift; sourceTree = "<group>"; };
 		CE19FC072C192A110004A964 /* DiaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCard.swift; sourceTree = "<group>"; };
 		CEC48F782C191C0F002DA3F6 /* emmm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emmm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC48F7B2C191C0F002DA3F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +76,7 @@
 			children = (
 				CEC48F942C191F0C002DA3F6 /* MusicKitViewModel.swift */,
 				CEC48F962C191F27002DA3F6 /* Diary.swift */,
+				CE19FC052C192A110004A964 /* DiaryStoreImporter.swift */,
 			);
 			path = VariousOtherThings;
 			sourceTree = "<group>";
@@ -104,7 +105,6 @@
 			children = (
 				CE19FC012C192A100004A964 /* HomeView.swift */,
 				CE19FC032C192A110004A964 /* DiaryCardItem.swift */,
-				CE19FC052C192A110004A964 /* HomeModel.swift */,
 				CE19FC072C192A110004A964 /* DiaryCard.swift */,
 				CE19FC092C192A120004A964 /* DetailModel.swift */,
 				CE19FC0B2C192A120004A964 /* DetailView.swift */,
@@ -242,7 +242,7 @@
 				CEC48F7C2C191C0F002DA3F6 /* AppDelegate.swift in Sources */,
 				CE19FC022C192A100004A964 /* HomeView.swift in Sources */,
 				CE19FC042C192A110004A964 /* DiaryCardItem.swift in Sources */,
-				CE19FC062C192A110004A964 /* HomeModel.swift in Sources */,
+				CE19FC062C192A110004A964 /* DiaryStoreImporter.swift in Sources */,
 				CE19FC082C192A110004A964 /* DiaryCard.swift in Sources */,
 				CE19FC0E2C192A130004A964 /* RecentSong.swift in Sources */,
 				CE19FC102C192A130004A964 /* MusicPickerModel.swift in Sources */,
