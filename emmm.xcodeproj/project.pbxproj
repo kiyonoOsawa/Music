@@ -12,31 +12,24 @@
 		CE19FC062C192A110004A964 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC052C192A110004A964 /* HomeModel.swift */; };
 		CE19FC082C192A110004A964 /* DiaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC072C192A110004A964 /* DiaryCard.swift */; };
 		CEC48F7C2C191C0F002DA3F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC48F7B2C191C0F002DA3F6 /* AppDelegate.swift */; };
-		CEC48F7E2C191C0F002DA3F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC48F7D2C191C0F002DA3F6 /* SceneDelegate.swift */; };
-		CEC48F802C191C0F002DA3F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC48F7F2C191C0F002DA3F6 /* ViewController.swift */; };
+		CE19FC1E2C192A150004A964 /* EmmmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC1D2C192A150004A964 /* EmmmApp.swift */; };
+		CE19FC202C192A150004A964 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC1F2C192A150004A964 /* RootTabView.swift */; };
 		CEC48F852C191C11002DA3F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC48F842C191C11002DA3F6 /* Assets.xcassets */; };
 		CEC48F882C191C11002DA3F6 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CEC48F872C191C11002DA3F6 /* Base */; };
 		CEC48F912C191C86002DA3F6 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CEC48F902C191C86002DA3F6 /* Realm */; };
 		CEC48F932C191C86002DA3F6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEC48F922C191C86002DA3F6 /* RealmSwift */; };
 		CEC48F952C191F0C002DA3F6 /* MusicKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC48F942C191F0C002DA3F6 /* MusicKitViewModel.swift */; };
 		CEC48F972C191F27002DA3F6 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC48F962C191F27002DA3F6 /* Diary.swift */; };
-		CEC48F992C191F38002DA3F6 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC48F982C191F38002DA3F6 /* TabBar.swift */; };
-		CEC48F9B2C191F4D002DA3F6 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC48F9A2C191F4D002DA3F6 /* TabBarViewController.swift */; };
 		CE19FC0E2C192A130004A964 /* RecentSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC0D2C192A130004A964 /* RecentSong.swift */; };
 		CE19FC102C192A130004A964 /* MusicPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC0F2C192A130004A964 /* MusicPickerModel.swift */; };
 		CE19FC122C192A130004A964 /* MusicPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC112C192A130004A964 /* MusicPickerView.swift */; };
 		CE19FC142C192A130004A964 /* AddDiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC132C192A130004A964 /* AddDiaryModel.swift */; };
 		CE19FC162C192A130004A964 /* AddDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC152C192A130004A964 /* AddDiaryView.swift */; };
-		CEC48FB52C1920D6002DA3F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC48FB42C1920D6002DA3F6 /* HomeViewController.swift */; };
 		CE19FC0A2C192A120004A964 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC092C192A120004A964 /* DetailModel.swift */; };
 		CE19FC0C2C192A120004A964 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC0B2C192A120004A964 /* DetailView.swift */; };
-		CEC48FBA2C1920FE002DA3F6 /* DiaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC48FB82C1920FE002DA3F6 /* DiaryCollectionViewCell.swift */; };
-		CEC48FBB2C1920FE002DA3F6 /* DiaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC48FB92C1920FE002DA3F6 /* DiaryCollectionViewCell.xib */; };
 		CE19FC182C192A140004A964 /* EmotionPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC172C192A140004A964 /* EmotionPlaylist.swift */; };
 		CE19FC1A2C192A140004A964 /* PlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC192C192A140004A964 /* PlaylistModel.swift */; };
 		CE19FC1C2C192A140004A964 /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19FC1B2C192A140004A964 /* PlaylistView.swift */; };
-		CEC48FCF2C1921B9002DA3F6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC48FCB2C1921B9002DA3F6 /* Home.storyboard */; };
-		CEC48FD02C1921B9002DA3F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC48FCC2C1921B9002DA3F6 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,30 +39,23 @@
 		CE19FC072C192A110004A964 /* DiaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCard.swift; sourceTree = "<group>"; };
 		CEC48F782C191C0F002DA3F6 /* emmm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emmm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC48F7B2C191C0F002DA3F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CEC48F7D2C191C0F002DA3F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEC48F7F2C191C0F002DA3F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE19FC1D2C192A150004A964 /* EmmmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmmmApp.swift; sourceTree = "<group>"; };
+		CE19FC1F2C192A150004A964 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		CEC48F842C191C11002DA3F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEC48F872C191C11002DA3F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEC48F892C191C11002DA3F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC48F942C191F0C002DA3F6 /* MusicKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicKitViewModel.swift; sourceTree = "<group>"; };
 		CEC48F962C191F27002DA3F6 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
-		CEC48F982C191F38002DA3F6 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		CEC48F9A2C191F4D002DA3F6 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CE19FC0D2C192A130004A964 /* RecentSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSong.swift; sourceTree = "<group>"; };
 		CE19FC0F2C192A130004A964 /* MusicPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPickerModel.swift; sourceTree = "<group>"; };
 		CE19FC112C192A130004A964 /* MusicPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPickerView.swift; sourceTree = "<group>"; };
 		CE19FC132C192A130004A964 /* AddDiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryModel.swift; sourceTree = "<group>"; };
 		CE19FC152C192A130004A964 /* AddDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryView.swift; sourceTree = "<group>"; };
-		CEC48FB42C1920D6002DA3F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE19FC092C192A120004A964 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		CE19FC0B2C192A120004A964 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		CEC48FB82C1920FE002DA3F6 /* DiaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCollectionViewCell.swift; sourceTree = "<group>"; };
-		CEC48FB92C1920FE002DA3F6 /* DiaryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE19FC172C192A140004A964 /* EmotionPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionPlaylist.swift; sourceTree = "<group>"; };
 		CE19FC192C192A140004A964 /* PlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistModel.swift; sourceTree = "<group>"; };
 		CE19FC1B2C192A140004A964 /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
-		CEC48FCB2C1921B9002DA3F6 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		CEC48FCC2C1921B9002DA3F6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,15 +80,6 @@
 			path = VariousOtherThings;
 			sourceTree = "<group>";
 		};
-		CE19FBF12C19299B0004A964 /* Tabbar */ = {
-			isa = PBXGroup;
-			children = (
-				CEC48F982C191F38002DA3F6 /* TabBar.swift */,
-				CEC48F9A2C191F4D002DA3F6 /* TabBarViewController.swift */,
-			);
-			path = Tabbar;
-			sourceTree = "<group>";
-		};
 		CE19FBF22C1929A50004A964 /* Music */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,15 +102,12 @@
 		CE19FBF42C1929C70004A964 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CEC48FB42C1920D6002DA3F6 /* HomeViewController.swift */,
 				CE19FC012C192A100004A964 /* HomeView.swift */,
 				CE19FC032C192A110004A964 /* DiaryCardItem.swift */,
 				CE19FC052C192A110004A964 /* HomeModel.swift */,
 				CE19FC072C192A110004A964 /* DiaryCard.swift */,
 				CE19FC092C192A120004A964 /* DetailModel.swift */,
 				CE19FC0B2C192A120004A964 /* DetailView.swift */,
-				CEC48FB82C1920FE002DA3F6 /* DiaryCollectionViewCell.swift */,
-				CEC48FB92C1920FE002DA3F6 /* DiaryCollectionViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -146,15 +120,6 @@
 				CE19FC1B2C192A140004A964 /* PlaylistView.swift */,
 			);
 			path = Playlist;
-			sourceTree = "<group>";
-		};
-		CE19FBF62C1929E50004A964 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				CEC48FCC2C1921B9002DA3F6 /* Main.storyboard */,
-				CEC48FCB2C1921B9002DA3F6 /* Home.storyboard */,
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		CEC48F6F2C191C0F002DA3F6 = {
@@ -177,15 +142,13 @@
 			isa = PBXGroup;
 			children = (
 				CEC48F7B2C191C0F002DA3F6 /* AppDelegate.swift */,
-				CEC48F7D2C191C0F002DA3F6 /* SceneDelegate.swift */,
-				CEC48F7F2C191C0F002DA3F6 /* ViewController.swift */,
+				CE19FC1D2C192A150004A964 /* EmmmApp.swift */,
+				CE19FC1F2C192A150004A964 /* RootTabView.swift */,
 				CE19FBF02C19297D0004A964 /* VariousOtherThings */,
-				CE19FBF12C19299B0004A964 /* Tabbar */,
 				CE19FBF22C1929A50004A964 /* Music */,
 				CE19FBF32C1929B50004A964 /* AddDiary */,
 				CE19FBF42C1929C70004A964 /* Home */,
 				CE19FBF52C1929D80004A964 /* Playlist */,
-				CE19FBF62C1929E50004A964 /* Storyboard */,
 				CEC48F842C191C11002DA3F6 /* Assets.xcassets */,
 				CEC48F862C191C11002DA3F6 /* LaunchScreen.storyboard */,
 				CEC48F892C191C11002DA3F6 /* Info.plist */,
@@ -258,11 +221,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEC48FCF2C1921B9002DA3F6 /* Home.storyboard in Resources */,
 				CEC48F852C191C11002DA3F6 /* Assets.xcassets in Resources */,
-				CEC48FD02C1921B9002DA3F6 /* Main.storyboard in Resources */,
 				CEC48F882C191C11002DA3F6 /* Base in Resources */,
-				CEC48FBB2C1920FE002DA3F6 /* DiaryCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,15 +233,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEC48F802C191C0F002DA3F6 /* ViewController.swift in Sources */,
+				CE19FC1E2C192A150004A964 /* EmmmApp.swift in Sources */,
+				CE19FC202C192A150004A964 /* RootTabView.swift in Sources */,
 				CE19FC182C192A140004A964 /* EmotionPlaylist.swift in Sources */,
 				CE19FC1A2C192A140004A964 /* PlaylistModel.swift in Sources */,
 				CE19FC1C2C192A140004A964 /* PlaylistView.swift in Sources */,
 				CEC48F972C191F27002DA3F6 /* Diary.swift in Sources */,
 				CEC48F7C2C191C0F002DA3F6 /* AppDelegate.swift in Sources */,
-				CEC48F992C191F38002DA3F6 /* TabBar.swift in Sources */,
-				CEC48FBA2C1920FE002DA3F6 /* DiaryCollectionViewCell.swift in Sources */,
-				CEC48FB52C1920D6002DA3F6 /* HomeViewController.swift in Sources */,
 				CE19FC022C192A100004A964 /* HomeView.swift in Sources */,
 				CE19FC042C192A110004A964 /* DiaryCardItem.swift in Sources */,
 				CE19FC062C192A110004A964 /* HomeModel.swift in Sources */,
@@ -293,8 +251,6 @@
 				CE19FC162C192A130004A964 /* AddDiaryView.swift in Sources */,
 				CE19FC0A2C192A120004A964 /* DetailModel.swift in Sources */,
 				CE19FC0C2C192A120004A964 /* DetailView.swift in Sources */,
-				CEC48F9B2C191F4D002DA3F6 /* TabBarViewController.swift in Sources */,
-				CEC48F7E2C191C0F002DA3F6 /* SceneDelegate.swift in Sources */,
 				CEC48F952C191F0C002DA3F6 /* MusicKitViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,7 +401,6 @@
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "このアプリはメディアを使用します";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,7 +429,6 @@
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "このアプリはメディアを使用します";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
