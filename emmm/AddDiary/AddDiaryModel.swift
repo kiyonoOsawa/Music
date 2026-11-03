@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 import MusicKit
-import RealmSwift
+import SwiftData
 
 @MainActor
 final class AddDiaryModel: ObservableObject {
@@ -22,21 +22,20 @@ final class AddDiaryModel: ObservableObject {
         savesToStore = false
     }
 
-    func save() {
+    func save(in context: ModelContext) {
         guard savesToStore else { return }
-        let diary = Diary()
-        diary.date = date
-        diary.musicTitle = song?.title ?? ""
-        diary.artistName = song?.artistName ?? ""
-        diary.musicImage = song?.artworkURL
-        diary.musicIDString = song?.id ?? ""
-        diary.emotion = emotion
-        diary.content = content
-
-        let realm = try! Realm()
-        try? realm.write {
-            realm.add(diary)
-        }
+        let nextOrder = ((try? context.fetch(FetchDescriptor<Diary>())) ?? []).map(\.listOrder).max().map { $0 + 1 } ?? 0
+        let diary = Diary(
+            musicIDString: song?.id ?? "",
+            musicTitle: song?.title ?? "",
+            musicImageString: song?.artworkURL?.absoluteString,
+            artistName: song?.artistName ?? "",
+            date: date,
+            emotion: emotion,
+            content: content,
+            listOrder: nextOrder
+        )
+        context.insert(diary)
 
         guard let song else { return }
         let emotionName = DiaryCardItem.emotionNames[emotion]

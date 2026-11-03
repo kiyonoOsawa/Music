@@ -1,6 +1,5 @@
 import UIKit
 import MusicKit
-import RealmSwift
 import UserNotifications
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -8,12 +7,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         UIApplication.shared.registerForRemoteNotifications()
-        let config = Realm.Configuration(
-            schemaVersion: 1,
-            migrationBlock: nil,
-            deleteRealmIfMigrationNeeded: true
-        )
-        Realm.Configuration.defaultConfiguration = config
         Task {
             await MusicAuthorization.request()
             let emotionNames = ["happy", "regret", "anxiety", "angry", "sad", "love", "joy", "tired"]

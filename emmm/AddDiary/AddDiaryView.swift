@@ -1,6 +1,8 @@
+import SwiftData
 import SwiftUI
 
 struct AddDiaryView: View {
+    @Environment(\.modelContext) private var modelContext
     @StateObject private var model: AddDiaryModel
     @StateObject private var musicPicker: MusicPickerModel
     @Environment(\.dismiss) private var dismiss
@@ -75,7 +77,7 @@ struct AddDiaryView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
-                        model.save()
+                        model.save(in: modelContext)
                         dismiss()
                     }
                     .foregroundStyle(Color("accentColor"))
@@ -134,6 +136,7 @@ private struct MusicSelectionRow: View {
         previewModel: AddDiaryModel(previewSong: RecentSong.previewSamples[0], content: "朝に聴いた曲"),
         previewPicker: MusicPickerModel(previewSongs: RecentSong.previewSamples)
     )
+    .modelContainer(for: Diary.self, inMemory: true)
 }
 
 #Preview("未選択") {
@@ -141,4 +144,5 @@ private struct MusicSelectionRow: View {
         previewModel: AddDiaryModel(previewSong: nil, content: ""),
         previewPicker: MusicPickerModel(previewSongs: RecentSong.previewSamples)
     )
+    .modelContainer(for: Diary.self, inMemory: true)
 }

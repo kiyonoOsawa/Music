@@ -24,4 +24,5 @@ struct RootTabView: View {
 
 #Preview {
     RootTabView()
+        .modelContainer(for: Diary.self, inMemory: true)
 }
