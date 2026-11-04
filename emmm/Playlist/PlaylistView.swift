@@ -1,3 +1,4 @@
+import MusicKit
 import SwiftUI
 
 struct PlaylistView: View {
@@ -69,13 +70,12 @@ private struct PlaylistCard: View {
         .frame(height: 206, alignment: .top)
     }
 
+    /// ライブラリのプレイリスト画像は musicKit:// の URL なので、AsyncImage ではなく ArtworkImage で描く。
     @ViewBuilder
     private var artwork: some View {
-        if let url = playlist.artworkURL {
-            AsyncImage(url: url) { image in
-                image.resizable().scaledToFill()
-            } placeholder: {
-                Image("emmm_stroke").resizable().scaledToFit()
+        if let artwork = playlist.artwork {
+            GeometryReader { proxy in
+                ArtworkImage(artwork, width: proxy.size.width, height: proxy.size.height)
             }
         } else {
             Image("emmm_stroke").resizable().scaledToFit()
