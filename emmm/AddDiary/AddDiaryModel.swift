@@ -41,10 +41,14 @@ final class AddDiaryModel: ObservableObject {
         let emotionName = DiaryCardItem.emotionNames[emotion]
         let musicID = song.id
         Task {
-            try? await MusicKitViewModel.shared.addMusicToLikedMusicLibrary(
-                emotion: emotionName,
-                ID: MusicItemID(rawValue: musicID)
-            )
+            do {
+                try await MusicKitViewModel.shared.addSongToEmotionPlaylist(
+                    emotion: emotionName,
+                    ID: MusicItemID(rawValue: musicID)
+                )
+            } catch {
+                print("感情プレイリストへの追加に失敗: \(error)")
+            }
         }
     }
 }

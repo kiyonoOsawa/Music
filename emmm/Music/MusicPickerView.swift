@@ -12,7 +12,7 @@ struct MusicPickerView: View {
                 ProgressView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else if model.songs.isEmpty {
-                Text("最近聴いた曲はありません")
+                Text(model.failureMessage ?? "最近聴いた曲はありません")
                     .foregroundStyle(Color("blackColor"))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {

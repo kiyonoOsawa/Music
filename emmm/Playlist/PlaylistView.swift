@@ -23,7 +23,7 @@ struct PlaylistView: View {
                     .frame(maxWidth: .infinity)
                     .padding(.top, 48)
             } else if model.playlists.isEmpty {
-                Text("プレイリストはまだありません")
+                Text(model.failureMessage ?? "プレイリストはまだありません")
                     .foregroundStyle(Color("blackColor"))
                     .frame(maxWidth: .infinity)
                     .padding(.top, 48)

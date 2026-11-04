@@ -1,5 +1,4 @@
 import UIKit
-import MusicKit
 import UserNotifications
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -8,33 +7,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.registerForRemoteNotifications()
         Task {
-            await MusicAuthorization.request()
-            let emotionNames = ["happy", "regret", "anxiety", "angry", "sad", "love", "joy", "tired"]
-            
-            emotionNames.map { item in
-                Task {
-                    let requestPlaylists = MusicLibraryRequest<Playlist>()
-                    let responsePlaylists = try await requestPlaylists.response()
-                    let playlists = responsePlaylists.items
-                    print("🐶",requestPlaylists, responsePlaylists.items)
-                    if !playlists.contains(where: { $0.name == "happy" }) {
-                        try await MusicKitViewModel.createMusicPlaylist(name: item)
-                    } else if !playlists.contains(where: { $0.name == "regret" }) {
-                        try await MusicKitViewModel.createMusicPlaylist(name: item)
-                    } else if !playlists.contains(where: { $0.name == "anxiety" }) {
-                        try await MusicKitViewModel.createMusicPlaylist(name: item)
-                    } else if !playlists.contains(where: { $0.name == "angry" }) {
-                        try await MusicKitViewModel.createMusicPlaylist(name: item)
-                    } else if !playlists.contains(where: { $0.name == "sad" }) {
-                        try await MusicKitViewModel.createMusicPlaylist(name: item)
-                    } else if !playlists.contains(where: { $0.name == "love" }) {
-                        try await MusicKitViewModel.createMusicPlaylist(name: item)
-                    } else if !playlists.contains(where: { $0.name == "joy" }) {
-                        try await MusicKitViewModel.createMusicPlaylist(name: item)
-                    } else if !playlists.contains(where: { $0.name == "tired" }) {
-                        try await MusicKitViewModel.createMusicPlaylist(name: item)
-                    }
-                }
+            do {
+                try await MusicKitViewModel.shared.ensureEmotionPlaylists()
+            } catch {
+                print("感情プレイリストの作成に失敗: \(error)")
             }
         }
 //        registerForPushNotifications()  

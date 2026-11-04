@@ -36,13 +36,24 @@ final class DetailModel: ObservableObject {
     }
 
     func togglePlayback() {
-        isPlaying.toggle()
-        guard let music else { return }
-        let id = MusicItemID(rawValue: item.musicIDString)
+        guard let music else {
+            isPlaying.toggle()
+            return
+        }
         if isPlaying {
-            music.startSystemMusic(ID: id)
-        } else {
-            music.stopSystemMusic(ID: id)
+            isPlaying = false
+            music.stopSystemMusic()
+            return
+        }
+        guard !item.musicIDString.isEmpty else { return }
+        Task {
+            do {
+                try await music.startSystemMusic(ID: MusicItemID(rawValue: item.musicIDString))
+                isPlaying = true
+            } catch {
+                print("再生に失敗: \(error)")
+                isPlaying = false
+            }
         }
     }
 }
