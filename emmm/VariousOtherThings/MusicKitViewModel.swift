@@ -1,143 +1,161 @@
 import Foundation
 import MusicKit
-import MediaPlayer
-import StoreKit
+
+enum MusicLibraryAccessError: LocalizedError {
+    case notAuthorized
+    case songNotFound
+    case playlistNotFound
+
+    var errorDescription: String? {
+        switch self {
+        case .notAuthorized:
+            return "Apple Musicの利用を許可してください"
+        case .songNotFound:
+            return "曲を見つけられませんでした"
+        case .playlistNotFound:
+            return "プレイリストを見つけられませんでした"
+        }
+    }
+}
 
 @MainActor
-class MusicKitViewModel: NSObject {
-    
-    @Published var musicRequest = MusicRecentlyPlayedRequest<Song>()
-    @Published var response: MusicRecentlyPlayedResponse<Song>!
-    @Published var musicID: String?
-    
+final class MusicKitViewModel {
     static let shared = MusicKitViewModel()
-    let emotionNames = ["happy", "regret", "anxiety", "angry", "sad", "love", "joy", "tired"]
-    
-    //最近聴いた曲を最新から順に取得する
-    func getCurrentMusic() async throws -> ([String], [URL?], [String], [MusicItemID]) {
-        //limitで取得個数制限
-        musicRequest.limit = 30
-        response = try await musicRequest.response()
-        let titles = response.items.compactMap { $0.title }
-        let images = response.items.compactMap { $0.artwork?.url(width: 200, height: 200) }
-        let artists = response.items.compactMap { $0.artistName }
-        let ids = response.items.compactMap{ $0.id }
-        print("最近聴いた曲のタイトル: \(titles)")
-        print("何を取得できているのかみたい\(response)")
-        print("何型？\(type(of: ids))")
-        return (titles, images, artists, ids)
+
+    private let playlistDescription = "A library of songs shared by the app."
+    private let transientArtworkPrefix = "musicKit://artwork/transient"
+    private var emotionPlaylistsTask: Task<Void, Error>?
+
+    func requireAuthorization() async throws {
+        let status: MusicAuthorization.Status
+        if MusicAuthorization.currentStatus == .notDetermined {
+            status = await MusicAuthorization.request()
+        } else {
+            status = MusicAuthorization.currentStatus
+        }
+        guard status == .authorized else {
+            throw MusicLibraryAccessError.notAuthorized
+        }
+    }
+
+    /// 起動時とプレイリスト画面から同時に呼ばれても、作成処理は一度だけ走らせる。
+    func ensureEmotionPlaylists() async throws {
+        if let emotionPlaylistsTask {
+            return try await emotionPlaylistsTask.value
+        }
+        let task = Task { try await createMissingEmotionPlaylists() }
+        emotionPlaylistsTask = task
+        do {
+            try await task.value
+        } catch {
+            emotionPlaylistsTask = nil
+            throw error
+        }
     }
 
     func fetchRecentSongs() async throws -> [RecentSong] {
-        musicRequest.limit = 30
-        response = try await musicRequest.response()
-        return response.items.map { song in
+        try await requireAuthorization()
+        var request = MusicRecentlyPlayedRequest<Song>()
+        request.limit = 30
+        return try await request.response().items.map { song in
             RecentSong(
                 id: song.id.rawValue,
                 title: song.title,
                 artistName: song.artistName,
-                artworkURL: song.artwork?.url(width: 200, height: 200)
+                artworkURL: displayArtworkURL(song.artwork, size: 200)
             )
         }
     }
-    
-    func fetchMusicID() async {
-        do {
-            // MusicKit APIを使用して音楽IDを取得
-            let request = MusicCatalogSearchRequest(term: "Your Search Term", types: [Song.self])
-            let response = try await request.response()
-            
-            if let song = response.songs.first {
-                DispatchQueue.main.async {
-                    self.musicID = song.id.rawValue
-                }
-            }
-        } catch {
-            print("Error fetching music ID: \(error)")
+
+    func getSpecificSongsOnCatalog(ID: MusicItemID) async throws -> Song {
+        try await requireAuthorization()
+        guard !ID.rawValue.isEmpty else { throw MusicLibraryAccessError.songNotFound }
+        let request = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: ID)
+        guard let song = try await request.response().items.first else {
+            throw MusicLibraryAccessError.songNotFound
         }
-    }
-    
-    func getSpecificSongsOnCatalog(ID: MusicItemID) async throws ->  MusicItemCollection<Song>.Element {
-        //試しに上の関数で取ってきた30個目の曲の情報を持ってくる
-        //idは曲一つ一つに必ず振られてるからidだけ抑えとけばこれで検索できる
-        let Songrequest = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: ID)
-        let Songresponse = try await Songrequest.response()
-        //        let song = Songresponse.items.first
-        guard !Songresponse.items.isEmpty, let song = Songresponse.items.first else {
-            throw NSError(domain: "MusicKitViewModel", code: -1, userInfo: [NSLocalizedDescriptionKey: "Song not found"])
-        }
-        print("id検索結果",song)
         return song
     }
-    
-    func startSystemMusic(ID: MusicItemID) {
-        Task {
-            do {
-                let song = try await getSpecificSongsOnCatalog(ID: ID)
-                SystemMusicPlayer.shared.queue = [song]
-                try await SystemMusicPlayer.shared.play()
-            } catch {
-                print("システムで再生する時のエラー",error.localizedDescription)
-            }
-        }
-    }
-    
-    func stopSystemMusic(ID: MusicItemID) {
-        Task {
-            do {
-                try await SystemMusicPlayer.shared.stop()
-            } catch {
-                print("システムで再生する時のエラー",error.localizedDescription)
-            }
-        }
-    }
-    
-    func fetchMusicPlaylist() async throws -> ([String], [URL?], [URL?]) {
-        let requestPlaylists = MusicLibraryRequest<Playlist>()
-        let responsePlaylists = try await requestPlaylists.response()
-        let playlists = responsePlaylists.items
-        let playlistTitles = playlists.map { $0.name }
-        let playlistIDs = playlists.map { $0.url }
-        let playlistImages = playlists.map { $0.artwork?.url(width: 200, height: 200) }
-        print("わんわん🐶",requestPlaylists, responsePlaylists.debugDescription)
-        return (playlistTitles, playlistIDs, playlistImages)
+
+    func startSystemMusic(ID: MusicItemID) async throws {
+        let song = try await getSpecificSongsOnCatalog(ID: ID)
+        SystemMusicPlayer.shared.queue = [song]
+        try await SystemMusicPlayer.shared.play()
     }
 
+    func stopSystemMusic() {
+        SystemMusicPlayer.shared.stop()
+    }
+
+    /// 同じ名前のプレイリストが重複していても、感情ごとに一つだけ感情の順で返す。
     func fetchEmotionPlaylists() async throws -> [EmotionPlaylist] {
-        let response = try await MusicLibraryRequest<Playlist>().response()
-        let transientPrefix = "musicKit://artwork/transient"
-        return response.items.compactMap { playlist in
-            guard DiaryCardItem.emotionNames.contains(playlist.name.lowercased()) else { return nil }
-            let artworkURL = playlist.artwork?.url(width: 200, height: 200)
-            if artworkURL?.absoluteString.hasPrefix(transientPrefix) == true { return nil }
-            guard let url = playlist.url else { return nil }
-            return EmotionPlaylist(id: url.absoluteString, title: playlist.name, artworkURL: artworkURL, url: url)
+        try await requireAuthorization()
+        do {
+            try await ensureEmotionPlaylists()
+        } catch {
+            print("感情プレイリストの作成に失敗: \(error)")
+        }
+        let playlists = try await libraryPlaylists()
+        return DiaryCardItem.emotionNames.compactMap { name in
+            guard let playlist = playlist(named: name, in: playlists) else { return nil }
+            return EmotionPlaylist(
+                id: playlist.id.rawValue,
+                title: playlist.name,
+                artworkURL: displayArtworkURL(playlist.artwork, size: 200),
+                url: playlist.url
+            )
         }
     }
-    
-    static func createMusicPlaylist(name: String) async throws {
-        Task {
-            do{
-                try await MusicLibrary.shared.createPlaylist(name: name, description: "A library of songs shared by the app.", authorDisplayName: nil)
-            }catch{
-                print("😺",error)
-            }
+
+    func playPlaylist(id: String) async throws {
+        try await requireAuthorization()
+        var request = MusicLibraryRequest<Playlist>()
+        request.filter(matching: \.id, equalTo: MusicItemID(id))
+        guard let playlist = try await request.response().items.first else {
+            throw MusicLibraryAccessError.playlistNotFound
+        }
+        SystemMusicPlayer.shared.queue = [playlist]
+        try await SystemMusicPlayer.shared.play()
+    }
+
+    func addSongToEmotionPlaylist(emotion: String, ID: MusicItemID) async throws {
+        let song = try await getSpecificSongsOnCatalog(ID: ID)
+        let playlists = try await libraryPlaylists()
+        if let playlist = playlist(named: emotion, in: playlists) {
+            try await MusicLibrary.shared.add(song, to: playlist)
+            return
+        }
+        _ = try await MusicLibrary.shared.createPlaylist(
+            name: emotion,
+            description: playlistDescription,
+            authorDisplayName: nil,
+            items: [song]
+        )
+    }
+
+    private func createMissingEmotionPlaylists() async throws {
+        try await requireAuthorization()
+        let playlists = try await libraryPlaylists()
+        for name in DiaryCardItem.emotionNames where playlist(named: name, in: playlists) == nil {
+            _ = try await MusicLibrary.shared.createPlaylist(
+                name: name,
+                description: playlistDescription,
+                authorDisplayName: nil
+            )
         }
     }
-    
-    func addMusicToLikedMusicLibrary(emotion: String, ID: MusicItemID) async throws {
-        Task {
-            do {
-                let Request = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: ID)
-                let Response = try await Request.response()
-                var requestPlaylists = MusicLibraryRequest<Playlist>()
-                //プレイリストとfilterのtextの名前一致してないと動かないから気をつけて
-                requestPlaylists.filter(text: emotion)
-                let responsePlaylists = try await requestPlaylists.response()
-                try await MusicLibrary.shared.add(Response.items.first!, to: responsePlaylists.items.first!)
-            } catch (let error) {
-                print(error)
-            }
-        }
+
+    private func libraryPlaylists() async throws -> MusicItemCollection<Playlist> {
+        try await MusicLibraryRequest<Playlist>().response().items
+    }
+
+    private func playlist(named name: String, in playlists: MusicItemCollection<Playlist>) -> Playlist? {
+        playlists.first { $0.name.lowercased() == name.lowercased() }
+    }
+
+    private func displayArtworkURL(_ artwork: Artwork?, size: Int) -> URL? {
+        guard let url = artwork?.url(width: size, height: size) else { return nil }
+        if url.absoluteString.hasPrefix(transientArtworkPrefix) { return nil }
+        return url
     }
 }

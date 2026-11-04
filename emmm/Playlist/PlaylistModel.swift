@@ -5,6 +5,7 @@ import UIKit
 final class PlaylistModel: ObservableObject {
     @Published private(set) var playlists: [EmotionPlaylist] = []
     @Published private(set) var isLoading = false
+    @Published private(set) var failureMessage: String?
 
     private let music: MusicKitViewModel?
 
@@ -21,10 +22,39 @@ final class PlaylistModel: ObservableObject {
         guard let music else { return }
         isLoading = true
         defer { isLoading = false }
-        playlists = (try? await music.fetchEmotionPlaylists()) ?? []
+        do {
+            playlists = try await music.fetchEmotionPlaylists()
+            failureMessage = nil
+        } catch {
+            print("プレイリストの取得に失敗: \(error)")
+            failureMessage = Self.failureMessage(for: error)
+        }
     }
 
     func open(_ playlist: EmotionPlaylist) {
-        UIApplication.shared.open(playlist.url)
+        if let url = playlist.url {
+            UIApplication.shared.open(url)
+            return
+        }
+        guard let music else { return }
+        Task {
+            do {
+                try await music.playPlaylist(id: playlist.id)
+                failureMessage = nil
+                if let musicApp = URL(string: "music://") {
+                    await UIApplication.shared.open(musicApp)
+                }
+            } catch {
+                print("プレイリストの再生に失敗: \(error)")
+                failureMessage = Self.failureMessage(for: error)
+            }
+        }
+    }
+
+    private static func failureMessage(for error: Error) -> String {
+        if let accessError = error as? MusicLibraryAccessError {
+            return accessError.localizedDescription
+        }
+        return "Apple Musicからプレイリストを取得できませんでした"
     }
 }
