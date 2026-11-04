@@ -101,7 +101,7 @@ final class MusicKitViewModel {
             return EmotionPlaylist(
                 id: playlist.id.rawValue,
                 title: playlist.name,
-                artworkURL: displayArtworkURL(playlist.artwork, size: 200),
+                artwork: playlist.artwork,
                 url: playlist.url
             )
         }
